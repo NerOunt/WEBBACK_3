@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Форма анкеты</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        input[type="text"],
+        input[type="tel"],
+        input[type="email"],
+        input[type="date"],
+        textarea,
+        select {
+            width: 100%;
+            padding: 8px;
+            box-sizing: border-box;
+        }
+        .radio-group {
+            display: flex;
+            gap: 15px;
+        }
+        .error {
+            color: red;
+            font-size: 14px;
+        }
+        button {
+            background: #4CAF50;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <form action="submit.php" method="POST">
+        <div class="form-group">
+            <label for="full_name">ФИО*</label>
+            <input type="text" id="full_name" name="full_name" required maxlength="150">
+        </div>
+
+        <div class="form-group">
+            <label for="phone">Телефон*</label>
+            <input type="tel" id="phone" name="phone" required>
+        </div>
+
+        <div class="form-group">
+            <label for="email">E-mail*</label>
+            <input type="email" id="email" name="email" required>
+        </div>
+
+        <div class="form-group">
+            <label for="birth_date">Дата рождения*</label>
+            <input type="date" id="birth_date" name="birth_date" required>
+        </div>
+
+        <div class="form-group">
+            <label>Пол*</label>
+            <div class="radio-group">
+                <label><input type="radio" name="gender" value="male" required> Мужской</label>
+                <label><input type="radio" name="gender" value="female"> Женский</label>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="languages">Любимые языки программирования*</label>
+            <select id="languages" name="languages[]" multiple required>
+                <option value="1">Pascal</option>
+                <option value="2">C</option>
+                <option value="3">C++</option>
+                <option value="4">JavaScript</option>
+                <option value="5">PHP</option>
+                <option value="6">Python</option>
+                <option value="7">Java</option>
+                <option value="8">Haskell</option>
+                <option value="9">Clojure</option>
+                <option value="10">Prolog</option>
+                <option value="11">Scala</option>
+                <option value="12">Go</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="biography">Биография</label>
+            <textarea id="biography" name="biography" rows="5"></textarea>
+        </div>
+
+        <div class="form-group">
+            <label>
+                <input type="checkbox" name="contract_agreed" required>
+                С контрактом ознакомлен(а)*
+            </label>
+        </div>
+
+        <button type="submit">Сохранить</button>
+    </form>
+</body>
+</html>
