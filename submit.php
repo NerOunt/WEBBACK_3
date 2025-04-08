@@ -1,9 +1,9 @@
 <?php
 // Подключение к базе данных
 $host = 'localhost';
-$dbname = 'u68895'; // Замените на ваш логин
-$username = 'u68895'; // Замените на ваш логин
-$password = '1562324'; // Замените на ваш пароль
+$dbname = 'u68895'; 
+$username = 'u68895'; 
+$password = '1562324'; 
 
 try {
     $pdo = new PDO("mysql:host=$host;dbname=$dbname;charset=utf8", $username, $password);
